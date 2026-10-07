@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoVault | Car Information Guide</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;scroll-behavior:smooth}
+body{background:#070707;color:white}
+nav{position:sticky;top:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:18px 7%;background:rgba(5,5,5,.92);backdrop-filter:blur(15px);border-bottom:1px solid #292929}
+.logo{font-size:25px;font-weight:bold;letter-spacing:2px}.logo span,.price{color:#e50914}
+nav ul{display:flex;gap:30px;list-style:none}nav a{color:white;text-decoration:none;transition:.3s}nav a:hover{color:#e50914}
+.hero{min-height:90vh;display:flex;justify-content:center;align-items:center;text-align:center;padding:50px 20px;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.92)),url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=85");background-size:cover;background-position:center}
+.hero-content{max-width:900px}.hero h1{font-size:clamp(45px,8vw,90px);line-height:1.05;margin-bottom:25px}.hero h1 span{color:#e50914}.hero p{color:#ddd;font-size:20px;line-height:1.7}
+.btn{display:inline-block;margin-top:30px;padding:15px 32px;background:#e50914;color:white;text-decoration:none;border-radius:30px;transition:.3s}.btn:hover{background:white;color:black;transform:translateY(-4px)}
+.search-area{padding:55px 20px 20px;text-align:center}.search-area h2{margin-bottom:20px}
+#search{width:min(600px,90%);padding:17px 22px;border-radius:30px;border:1px solid #333;background:#151515;color:white;font-size:16px;outline:none}#search:focus{border-color:#e50914}
+section{padding:70px 7%}.section-title{text-align:center;margin-bottom:50px}.section-title h2{font-size:42px;margin-bottom:12px}.section-title p{color:#999}
+.brands{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}.card{background:linear-gradient(145deg,#181818,#0d0d0d);border:1px solid #292929;border-radius:22px;overflow:hidden;transition:.4s}.card:hover{transform:translateY(-10px);border-color:#e50914;box-shadow:0 20px 50px rgba(229,9,20,.15)}
+.card-image{width:100%;height:220px;object-fit:cover;transition:.5s}.card:hover .card-image{transform:scale(1.06)}.card-content{padding:25px}.card h3{font-size:28px;margin-bottom:12px}.card p{color:#aaa;line-height:1.7}.country{display:inline-block;margin-top:18px;color:#e50914;font-size:14px}.price{margin-top:18px;font-size:21px;font-weight:bold}
+.explore-btn{display:inline-block;margin-top:20px;padding:10px 18px;background:#222;color:white;text-decoration:none;border-radius:20px;transition:.3s}.explore-btn:hover{background:#e50914}
+.details{background:#101010}.brand-detail{max-width:1000px;margin:0 auto 30px;padding:30px;background:#171717;border-radius:18px;border-left:4px solid #e50914}.brand-detail h3{font-size:29px;margin-bottom:15px}.brand-detail p{color:#bbb;line-height:1.8}
+.model-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin-top:25px}.model{background:#0d0d0d;padding:20px;border-radius:14px;border:1px solid #242424}.model h4{font-size:20px;margin-bottom:10px}.model .model-price{color:#e50914;font-weight:bold;margin-bottom:8px}.model p{color:#888;font-size:14px}
+footer{text-align:center;padding:45px 20px;background:#050505;color:#777}footer strong{color:white}
+@media(max-width:700px){nav{padding:15px 5%}nav ul{display:none}.hero{min-height:80vh}section{padding:55px 5%}.section-title h2{font-size:32px}.card-image{height:200px}}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo">AUTO<span>VAULT</span></div>
+<ul><li><a href="#home">Home</a></li><li><a href="#brands">Brands</a></li><li><a href="#guide">Car Guide</a></li></ul>
+</nav>
+
+<section class="hero" id="home">
+<div class="hero-content">
+<h1>Explore The World Of <span>Cars</span></h1>
+<p>Discover legendary automobile brands, cars, prices, performance and specifications.</p>
+<a href="#brands" class="btn">Explore Cars 🚗</a>
+</div>
+</section>
+
+<div class="search-area">
+<h2>🔎 Search Your Favourite Brand</h2>
+<input type="text" id="search" placeholder="Search Porsche, Ferrari, Tata..." onkeyup="searchBrands()">
+</div>
+
+<section id="brands">
+<div class="section-title"><h2>Featured Brands</h2><p>Explore famous automobile manufacturers from around the world.</p></div>
+<div class="brands">
+
+<div class="card brand"><img class="card-image" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=85" alt="Porsche"><div class="card-content"><h3>Porsche</h3><p>German manufacturer famous for sports cars and luxury performance vehicles.</p><span class="country">🇩🇪 Germany</span><div class="price">From ₹1.2 Crore*</div><a href="#porsche" class="explore-btn">View Cars →</a></div></div>
+
+<div class="card brand"><img class="card-image" src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=85" alt="Rolls Royce"><div class="card-content"><h3>Rolls-Royce</h3><p>British luxury manufacturer known for handcrafted vehicles and exceptional comfort.</p><span class="country">🇬🇧 United Kingdom</span><div class="price">From ₹6.95 Crore*</div><a href="#rolls" class="explore-btn">View Cars →</a></div></div>
+
+<div class="card brand"><img class="card-image" src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=1000&q=85" alt="Ferrari"><div class="card-content"><h3>Ferrari</h3><p>Italian performance-car manufacturer with a legendary motorsport heritage.</p><span class="country">🇮🇹 Italy</span><div class="price">From ₹3.5 Crore*</div><a href="#ferrari" class="explore-btn">View Cars →</a></div></div>
+
+<div class="card brand"><img class="card-image" src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1000&q=85" alt="Lamborghini"><div class="card-content"><h3>Lamborghini</h3><p>Italian supercar manufacturer known for dramatic styling and performance.</p><span class="country">🇮🇹 Italy</span><div class="price">From ₹4.99 Crore*</div><a href="#lamborghini" class="explore-btn">View Cars →</a></div></div>
+
+<div class="card brand"><img class="card-image" src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=85" alt="Tata Motors"><div class="card-content"><h3>Tata Motors</h3><p>Indian automobile manufacturer producing cars, SUVs, EVs and commercial vehicles.</p><span class="country">🇮🇳 India</span><div class="price">From ₹5.0 Lakh*</div><a href="#tata" class="explore-btn">View Cars →</a></div></div>
+
+</div>
+</section>
+
+<section class="details" id="guide">
+<div class="section-title"><h2>🚘 Car Information Guide</h2><p>Popular models and approximate starting prices.</p></div>
+
+<div class="brand-detail" id="porsche"><h3>🏁 Porsche</h3><p>Porsche is a German manufacturer known for engineering-focused sports cars, SUVs and luxury vehicles.</p><div class="model-list">
+<div class="model"><h4>Porsche 911</h4><div class="model-price">Approx. ₹2 Crore+</div><p>Iconic Porsche sports car.</p></div>
+<div class="model"><h4>Porsche Cayenne</h4><div class="model-price">Approx. ₹1.3 Crore+</div><p>Luxury performance SUV.</p></div>
+<div class="model"><h4>Porsche Macan</h4><div class="model-price">Approx. ₹90 Lakh+</div><p>Premium compact SUV.</p></div>
+</div></div>
+
+<div class="brand-detail" id="rolls"><h3>👑 Rolls-Royce</h3><p>Rolls-Royce represents ultra-luxury motoring, handcrafted interiors and highly personalized vehicles.</p><div class="model-list">
+<div class="model"><h4>Phantom</h4><div class="model-price">Approx. ₹8 Crore+</div><p>Ultra-luxury flagship sedan.</p></div>
+<div class="model"><h4>Ghost</h4><div class="model-price">Approx. ₹6.95 Crore+</div><p>Luxury performance sedan.</p></div>
+<div class="model"><h4>Cullinan</h4><div class="model-price">Approx. ₹6.95 Crore+</div><p>Ultra-luxury SUV.</p></div>
+</div></div>
+
+<div class="brand-detail" id="ferrari"><h3>🏎️ Ferrari</h3><p>Ferrari is an Italian performance-car manufacturer with a famous history in motorsport.</p><div class="model-list">
+<div class="model"><h4>Ferrari 296 GTB</h4><div class="model-price">Approx. ₹5.4 Crore+</div><p>High-performance hybrid sports car.</p></div>
+<div class="model"><h4>Ferrari Roma</h4><div class="model-price">Approx. ₹3.76 Crore+</div><p>Elegant grand touring sports car.</p></div>
+<div class="model"><h4>Ferrari Purosangue</h4><div class="model-price">Approx. ₹10 Crore+</div><p>Four-door Ferrari performance vehicle.</p></div>
+</div></div>
+
+<div class="brand-detail" id="lamborghini"><h3>🐂 Lamborghini</h3><p>Lamborghini is famous for dramatic styling, powerful engines and high-performance supercars.</p><div class="model-list">
+<div class="model"><h4>Revuelto</h4><div class="model-price">Approx. ₹8.9 Crore+</div><p>V12 plug-in hybrid supercar.</p></div>
+<div class="model"><h4>Urus</h4><div class="model-price">Approx. ₹4.2 Crore+</div><p>High-performance luxury SUV.</p></div>
+<div class="model"><h4>Huracán</h4><div class="model-price">Approx. ₹4 Crore+</div><p>Iconic Lamborghini sports car.</p></div>
+</div></div>
+
+<div class="brand-detail" id="tata"><h3>🇮🇳 Tata Motors</h3><p>Tata Motors is one of India's major automobile manufacturers, offering SUVs, passenger cars and EVs.</p><div class="model-list">
+<div class="model"><h4>Tata Nexon</h4><div class="model-price">Approx. ₹8 Lakh+</div><p>Popular compact SUV.</p></div>
+<div class="model"><h4>Tata Harrier</h4><div class="model-price">Approx. ₹15 Lakh+</div><p>Premium mid-size SUV.</p></div>
+<div class="model"><h4>Tata Punch</h4><div class="model-price">Approx. ₹6 Lakh+</div><p>Compact SUV.</p></div>
+</div></div>
+
+<p style="text-align:center;color:#777;margin-top:35px;font-size:13px">*Prices are approximate and for website demonstration. Actual prices may vary by variant, location, taxes and model year.</p>
+</section>
+
+<footer>
+<p>© 2026 <strong>AUTO<span style="color:#e50914">VAULT</span></strong></p>
+<p style="margin-top:10px">Your Car Information Guide 🚗</p>
+</footer>
+
+<script>
+function searchBrands() {
+    const input = document.getElementById("search").value.toLowerCase();
+    document.querySelectorAll(".brand").forEach(card => {
+        const name = card.querySelector("h3").textContent.toLowerCase();
+        card.style.display = name.includes(input) ? "block" : "none";
+    });
+}
+</script>
+
+</body>
+</html>
